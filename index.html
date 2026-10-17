@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrowly — Borrow what you need. Buy less.</title>
+    <meta name="description" content="Campus-focused peer-to-peer borrowing platform where college students can borrow useful items from other students instead of buying things they only need temporarily.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- STICKY NAVBAR -->
+    <header class="navbar-header" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <span class="logo-mark">B</span>
+                <span class="logo-text">Borrowly</span>
+            </a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#explore" class="nav-link">Explore</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#safety" class="nav-link">Safety</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-secondary" id="login-btn">Log In</button>
+                <button class="btn btn-primary" id="join-btn">Join Borrowly</button>
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content animate-on-load">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>Active on 40+ college campuses</span>
+                    </div>
+                    <h1 class="hero-headline">Need it for tomorrow? <br><span class="accent-text">Borrow it today.</span></h1>
+                    <p class="hero-subtitle">Stop buying things for a single assignment, lab, or weekend fest. Borrow calculators, tripods, lab coats, and gear directly from students right on your campus.</p>
+                    
+                    <!-- Search Widget -->
+                    <div class="hero-search-box">
+                        <div class="search-input-group">
+                            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                            <input type="text" id="hero-search-input" placeholder="Search calculator, DSLR, lab coat, HDMI..." aria-label="Search items">
+                        </div>
+                        <div class="search-filter-dropdown">
+                            <select id="hero-campus-select" aria-label="Select Campus">
+                                <option value="all">All Campuses</option>
+                                <option value="north">North Campus</option>
+                                <option value="south">South Campus</option>
+                                <option value="tech">Tech Institute</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary search-submit-btn" id="hero-search-btn">Search Items</button>
+                    </div>
+
+                    <div class="hero-tags">
+                        <span class="tag-label">Popular searches:</span>
+                        <a href="#explore" class="search-tag" data-tag="calculator">TI-84 Calculator</a>
+                        <a href="#explore" class="search-tag" data-tag="tripod">Camera Tripod</a>
+                        <a href="#explore" class="search-tag" data-tag="lab coat">Lab Coat</a>
+                        <a href="#explore" class="search-tag" data-tag="adapter">HDMI Adapter</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual animate-on-load delay-1">
+                    <div class="hero-composition">
+                        <div class="hero-card-floating card-1">
+                            <div class="card-thumb">📐</div>
+                            <div class="card-info">
+                                <span class="item-name">Scientific Calculator</span>
+                                <span class="item-rate">Free / 2 days</span>
+                            </div>
+                            <span class="status-badge available">Available</span>
+                        </div>
+                        <div class="hero-main-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="College students collaborating on campus" class="hero-img">
+                            <div class="hero-img-overlay"></div>
+                        </div>
+                        <div class="hero-card-floating card-2">
+                            <div class="card-thumb">📷</div>
+                            <div class="card-info">
+                                <span class="item-name">Manfrotto Tripod</span>
+                                <span class="item-rate">₹50 / day</span>
+                            </div>
+                            <span class="status-badge borrowed">Near Hostel B</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARQUEE STRIP -->
+        <div class="marquee-section">
+            <div class="marquee-track">
+                <div class="marquee-item"><span>✨</span> Verified student community</div>
+                <div class="marquee-item"><span>🌱</span> Zero waste campus living</div>
+                <div class="marquee-item"><span>⚡</span> Instant pickup in your hostel</div>
+                <div class="marquee-item"><span>🔒</span> Safe & trusted peer borrowing</div>
+                <div class="marquee-item"><span>✨</span> Verified student community</div>
+                <div class="marquee-item"><span>🌱</span> Zero waste campus living</div>
+                <div class="marquee-item"><span>⚡</span> Instant pickup in your hostel</div>
+                <div class="marquee-item"><span>🔒</span> Safe & trusted peer borrowing</div>
+            </div>
+        </div>
+
+        <!-- EXPLORE LISTINGS SECTION -->
+        <section class="explore-section" id="explore">
+            <div class="section-container">
+                <div class="section-header-flex">
+                    <div>
+                        <span class="section-tag">LIVE ON CAMPUS</span>
+                        <h2 class="section-title">Explore available items</h2>
+                        <p class="section-desc">Borrow items from students living just a few doors down.</p>
+                    </div>
+                    
+                    <div class="category-pills" id="category-pills">
+                        <button class="pill-btn active" data-category="all">All Items</button>
+                        <button class="pill-btn" data-category="academics">Academics</button>
+                        <button class="pill-btn" data-category="electronics">Electronics</button>
+                        <button class="pill-btn" data-category="hostel">Hostel Life</button>
+                        <button class="pill-btn" data-category="events">Events & Fests</button>
+                    </div>
+                </div>
+
+                <!-- Listings Grid -->
+                <div class="listings-grid" id="listings-grid">
+                    <!-- Item 1 -->
+                    <article class="listing-card" data-category="academics" data-id="1">
+                        <div class="listing-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="TI-84 Plus CE Graphing Calculator" class="listing-img">
+                            <span class="listing-tag academics">Academics</span>
+                            <button class="wishlist-btn" aria-label="Save to wishlist">❤️</button>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-meta-top">
+                                <span class="listing-owner">By Aarav M. • Block 4</span>
+                                <span class="listing-rating">★ 4.9 (18)</span>
+                            </div>
+                            <h3 class="listing-title">TI-84 Plus CE Graphing Calculator</h3>
+                            <p class="listing-snippet">Essential for Calculus and Linear Algebra midterms. Clean and fully charged.</p>
+                            <div class="listing-footer">
+                                <div class="listing-price">
+                                    <span class="price-val">Free</span>
+                                    <span class="price-unit">/ 3 days</span>
+                                </div>
+                                <button class="btn btn-secondary btn-sm view-details-btn" data-id="1">View Details</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 2 -->
+                    <article class="listing-card" data-category="electronics" data-id="2">
+                        <div class="listing-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80" alt="Professional Camera Tripod" class="listing-img">
+                            <span class="listing-tag electronics">Electronics</span>
+                            <button class="wishlist-btn" aria-label="Save to wishlist">❤️</button>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-meta-top">
+                                <span class="listing-owner">By Rhea S. • Hostel C</span>
+                                <span class="listing-rating">★ 5.0 (24)</span>
+                            </div>
+                            <h3 class="listing-title">Manfrotto Compact Action Tripod</h3>
+                            <p class="listing-snippet">Sturdy aluminum tripod with smartphone mount and quick release plate.</p>
+                            <div class="listing-footer">
+                                <div class="listing-price">
+                                    <span class="price-val">₹60</span>
+                                    <span class="price-unit">/ day</span>
+                                </div>
+                                <button class="btn btn-secondary btn-sm view-details-btn" data-id="2">View Details</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 3 -->
+                    <article class="listing-card" data-category="electronics" data-id="3">
+                        <div class="listing-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="USB-C Multiport HDMI Adapter" class="listing-img">
+                            <span class="listing-tag electronics">Electronics</span>
+                            <button class="wishlist-btn" aria-label="Save to wishlist">❤️</button>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-meta-top">
+                                <span class="listing-owner">By Kabir K. • New Hostel</span>
+                                <span class="listing-rating">★ 4.8 (12)</span>
+                            </div>
+                            <h3 class="listing-title">Anker USB-C Multiport HDMI Adapter</h3>
+                            <p class="listing-snippet">Includes 4K HDMI, 2x USB 3.0 ports, and Power Delivery pass-through.</p>
+                            <div class="listing-footer">
+                                <div class="listing-price">
+                                    <span class="price-val">Free</span>
+                                    <span class="price-unit">/ weekend</span>
+                                </div>
+                                <button class="btn btn-secondary btn-sm view-details-btn" data-id="3">View Details</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 4 -->
+                    <article class="listing-card" data-category="academics" data-id="4">
+                        <div class="listing-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="White Lab Coat and Safety Goggles" class="listing-img">
+                            <span class="listing-tag academics">Academics</span>
+                            <button class="wishlist-btn" aria-label="Save to wishlist">❤️</button>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-meta-top">
+                                <span class="listing-owner">By Sneha P. • Girls Hostel</span>
+                                <span class="listing-rating">★ 4.9 (31)</span>
+                            </div>
+                            <h3 class="listing-title">Chemistry Lab Coat (Size M) + Goggles</h3>
+                            <p class="listing-snippet">Freshly laundered 100% cotton coat with ANSI-approved safety goggles.</p>
+                            <div class="listing-footer">
+                                <div class="listing-price">
+                                    <span class="price-val">Free</span>
+                                    <span class="price-unit">/ lab session</span>
+                                </div>
+                                <button class="btn btn-secondary btn-sm view-details-btn" data-id="4">View Details</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 5 -->
+                    <article class="listing-card" data-category="events" data-id="5">
+                        <div class="listing-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80" alt="JBL Portable Bluetooth Speaker" class="listing-img">
+                            <span class="listing-tag events">Events & Fests</span>
+                            <button class="wishlist-btn" aria-label="Save to wishlist">❤️</button>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-meta-top">
+                                <span class="listing-owner">By Rohan V. • Block 2</span>
+                                <span class="listing-rating">★ 4.7 (45)</span>
+                            </div>
+                            <h3 class="listing-title">JBL Flip 6 Waterproof Bluetooth Speaker</h3>
+                            <p class="listing-snippet">Loud and clear sound for hostel room jam sessions and outdoor club meets.</p>
+                            <div class="listing-footer">
+                                <div class="listing-price">
+                                    <span class="price-val">₹100</span>
+                                    <span class="price-unit">/ day</span>
+                                </div>
+                                <button class="btn btn-secondary btn-sm view-details-btn" data-id="5">View Details</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 6 -->
+                    <article class="listing-card" data-category="hostel" data-id="6">
+                        <div class="listing-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="Quechua Hiking Backpack" class="listing-img">
+                            <span class="listing-tag hostel">Hostel Life</span>
+                            <button class="wishlist-btn" aria-label="Save to wishlist">❤️</button>
+                        </div>
+                        <div class="listing-content">
+                            <div class="listing-meta-top">
+                                <span class="listing-owner">By Tanvi M. • Block 1</span>
+                                <span class="listing-rating">★ 5.0 (15)</span>
+                            </div>
+                            <h3 class="listing-title">Quechua 40L Trekking & Travel Backpack</h3>
+                            <p class="listing-snippet">Ergonomic lightweight backpack perfect for weekend trips and end-semester breaks.</p>
+                            <div class="listing-footer">
+                                <div class="listing-price">
+                                    <span class="price-val">₹80</span>
+                                    <span class="price-unit">/ day</span>
+                                </div>
+                                <button class="btn btn-secondary btn-sm view-details-btn" data-id="6">View Details</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="load-more-wrap">
+                    <button class="btn btn-secondary btn-lg" id="load-more-btn">Explore More Listings on Campus</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORYTELLING SECTION -->
+        <section class="story-section">
+            <div class="section-container">
+                <div class="story-grid">
+                    <div class="story-text-col">
+                        <span class="section-tag">THE BORROWLY PHILOSOPHY</span>
+                        <h2 class="section-title">Why buy it when you only need it for three hours?</h2>
+                        <p class="story-lead">College life is full of temporary needs: a calculator for one final exam, a ring light for a presentation video, or a formal blazer for a placement interview.</p>
+                        
+                        <div class="story-checklist">
+                            <div class="check-item">
+                                <div class="check-icon">✓</div>
+                                <div>
+                                    <h4>Save your allowance</h4>
+                                    <p>Students spend over ₹6,000 every year on items used less than three times.</p>
+                                </div>
+                            </div>
+                            <div class="check-item">
+                                <div class="check-icon">✓</div>
+                                <div>
+                                    <h4>Declutter hostel rooms</h4>
+                                    <p>Less clutter means more study space and easier move-outs at end of term.</p>
+                                </div>
+                            </div>
+                            <div class="check-item">
+                                <div class="check-icon">✓</div>
+                                <div>
+                                    <h4>Build campus trust</h4>
+                                    <p>Connect with peers in your department and block who share your interests.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="story-visual-col">
+                        <div class="comparison-card">
+                            <div class="comp-box bad">
+                                <span class="comp-label">Traditional Way</span>
+                                <h3>Buy & Collect Dust</h3>
+                                <ul>
+                                    <li>❌ Spend ₹3,500 on a scientific calculator</li>
+                                    <li>❌ Use it during one semester</li>
+                                    <li>❌ Toss it in a dusty drawer or landfill</li>
+                                </ul>
+                            </div>
+                            <div class="comp-box good">
+                                <span class="comp-label">Borrowly Way</span>
+                                <h3>Share & Connect</h3>
+                                <ul>
+                                    <li>✅ Borrow from a senior in Block 3 for free</li>
+                                    <li>✅ Return it right after your exam</li>
+                                    <li>✅ Save money and make a campus friend</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAMPUS LIFE CATEGORIES -->
+        <section class="categories-section" id="categories">
+            <div class="section-container">
+                <div class="text-center">
+                    <span class="section-tag">CURATED COLLECTIONS</span>
+                    <h2 class="section-title">Built for campus life</h2>
+                    <p class="section-desc">Find precisely what you need based on what's happening this week.</p>
+                </div>
+
+                <div class="categories-grid">
+                    <div class="category-card" data-filter="academics">
+                        <div class="cat-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" alt="Projects & Classes">
+                            <div class="cat-overlay"></div>
+                        </div>
+                        <div class="cat-content">
+                            <h3>Projects & Classes</h3>
+                            <p>Calculators, drafting kits, lab coats, and textbooks</p>
+                            <span class="cat-link">Browse items →</span>
+                        </div>
+                    </div>
+
+                    <div class="category-card" data-filter="events">
+                        <div class="cat-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="College Fests">
+                            <div class="cat-overlay"></div>
+                        </div>
+                        <div class="cat-content">
+                            <h3>College Fests</h3>
+                            <p>DSLRs, ring lights, speakers, and stage props</p>
+                            <span class="cat-link">Browse items →</span>
+                        </div>
+                    </div>
+
+                    <div class="category-card" data-filter="hostel">
+                        <div class="cat-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=600&q=80" alt="Hostel Essentials">
+                            <div class="cat-overlay"></div>
+                        </div>
+                        <div class="cat-content">
+                            <h3>Hostel Essentials</h3>
+                            <p>Induction plates, irons, mattresses, and hangers</p>
+                            <span class="cat-link">Browse items →</span>
+                        </div>
+                    </div>
+
+                    <div class="category-card" data-filter="weekend">
+                        <div class="cat-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Weekend Plans">
+                            <div class="cat-overlay"></div>
+                        </div>
+                        <div class="cat-content">
+                            <h3>Weekend Plans</h3>
+                            <p>Trekking backpacks, badminton rackets, and board games</p>
+                            <span class="cat-link">Browse items →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS SECTION -->
+        <section class="how-it-works-section" id="how-it-works">
+            <div class="section-container">
+                <div class="text-center">
+                    <span class="section-tag">SIMPLE 3-STEP PROCESS</span>
+                    <h2 class="section-title">How Borrowly works</h2>
+                    <p class="section-desc">Borrowing from a fellow student takes less than a minute.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-num">01</div>
+                        <h3>Search & Request</h3>
+                        <p>Find what you need on campus using filters for your hostel or department. Send a quick borrow request with your preferred pickup time.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-num">02</div>
+                        <h3>Quick Campus Pickup</h3>
+                        <p>Chat securely with the owner, meet at a convenient campus spot like the library lobby or hostel mess, and collect your item.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-num">03</div>
+                        <h3>Use & Return</h3>
+                        <p>Complete your project or exam, return the item in good condition, and leave a helpful review for your fellow student.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDITORIAL QUOTE BANNER -->
+        <section class="editorial-banner">
+            <div class="section-container">
+                <div class="editorial-card">
+                    <span class="editorial-tag">COMMUNITY FIRST</span>
+                    <h2 class="editorial-quote">"Good things are better when shared across campus."</h2>
+                    <p class="editorial-author">— Borrowly Student Council Initiative</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST AND SAFETY SECTION -->
+        <section class="safety-section" id="safety">
+            <div class="section-container">
+                <div class="safety-grid">
+                    <div>
+                        <span class="section-tag">TRUST & SAFETY</span>
+                        <h2 class="section-title">Safe, verified, and student-friendly</h2>
+                        <p class="section-desc">We keep borrowing secure so you can share with total peace of mind.</p>
+                        
+                        <ul class="safety-list">
+                            <li>
+                                <strong>College ID Verification:</strong> Every user must verify with an active student email or ID card.
+                            </li>
+                            <li>
+                                <strong>Hostel Neighborhoods:</strong> Know your borrower or lender's block before confirming.
+                            </li>
+                            <li>
+                                <strong>Condition Check:</strong> Photo check-ins before and after borrowing protect both parties.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="safety-card-box">
+                        <div class="safety-highlight-card">
+                            <div class="safety-icon-wrap">🛡️</div>
+                            <h3>Borrowly Pledge</h3>
+                            <p>"Treat every borrowed item better than your own, return it on time, and help your campus community thrive."</p>
+                            <div class="pledge-author">
+                                <span>12,450+ successful campus exchanges</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="final-cta-section">
+            <div class="section-container text-center">
+                <div class="cta-box">
+                    <h2>Your next useful thing might <br>already be on campus.</h2>
+                    <p>Join thousands of college students saving money and reducing waste today.</p>
+                    <div class="cta-actions">
+                        <button class="btn btn-primary btn-lg" id="cta-join-btn">Get Started Now</button>
+                        <a href="#explore" class="btn btn-secondary btn-lg">Browse Listings</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="brand-logo">
+                        <span class="logo-mark">B</span>
+                        <span class="logo-text">Borrowly</span>
+                    </a>
+                    <p>Borrow what you need. Buy less.</p>
+                    <p class="copyright">© 2026 Borrowly Technologies Inc. Made for students.</p>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#explore">All Listings</a></li>
+                        <li><a href="#categories">Academics</a></li>
+                        <li><a href="#categories">Electronics</a></li>
+                        <li><a href="#categories">Hostel Life</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#safety">Trust & Safety</a></li>
+                        <li><a href="#">Campus Ambassadors</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h4>Legal & Support</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Item Details Modal -->
+    <div class="modal-backdrop" id="item-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal (Log In / Join) -->
+    <div class="modal-backdrop" id="auth-modal">
+        <div class="modal-container modal-sm">
+            <button class="modal-close" id="auth-modal-close" aria-label="Close modal">&times;</button>
+            <div class="auth-modal-content">
+                <div class="auth-header">
+                    <span class="logo-mark sm">B</span>
+                    <h3 id="auth-modal-title">Welcome to Borrowly</h3>
+                    <p id="auth-modal-subtitle">Enter your college email to continue</p>
+                </div>
+                <form id="auth-form">
+                    <div class="form-group">
+                        <label for="college-email">College Email (.edu / .ac.in)</label>
+                        <input type="email" id="college-email" placeholder="yourname@college.edu" required>
+                    </div>
+                    <div class="form-group" id="password-group">
+                        <label for="college-pass">Password</label>
+                        <input type="password" id="college-pass" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" id="auth-submit-btn">Continue with Email</button>
+                </form>
+                <div class="auth-switch">
+                    <p id="auth-switch-text">Don't have an account? <a href="#" id="auth-switch-link">Join Borrowly</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span id="toast-message">Action successful!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
